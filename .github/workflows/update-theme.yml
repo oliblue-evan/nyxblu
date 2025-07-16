@@ -1,11 +1,11 @@
 name: Update theme
 
-# Controls when the workflow will run
+# 控制工作流何时运行
 on:
   schedule:
-    # Update theme automatically everyday at 00:00 UTC
+    # 每天00:00 UTC自动更新主题
     - cron: "0 0 * * *"
-  # Allows you to run this workflow manually from the Actions tab
+  # 允许从Actions选项卡手动运行此工作流
   workflow_dispatch:
 
 jobs:
@@ -13,8 +13,8 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      # Give the default GITHUB_TOKEN write permission to commit and push the
-      # added or changed files to the repository.
+      # 给予默认GITHUB_TOKEN写入权限，以提交和推送添加或更改的文件到仓库
+# 添加或更改的文件到仓库。
       contents: write
     
     steps:

@@ -1,13 +1,13 @@
-# Update the NODE_VERSION arg in docker-compose.yml to pick a Node version: 18, 16, 14
+# 在 docker-compose.yml 中更新 NODE_VERSION 参数以选择 Node 版本: 18, 16, 14
 ARG NODE_VERSION=16
 FROM mcr.microsoft.com/devcontainers/javascript-node:${NODE_VERSION}
 
-# VARIANT can be either 'hugo' for the standard version or 'hugo_extended' for the extended version.
+# VARIANT 可以是 'hugo'（标准版）或 'hugo_extended'（扩展版）
 ARG VARIANT=hugo
-# VERSION can be either 'latest' or a specific version number
+# VERSION 可以是 'latest'（最新版）或特定版本号
 ARG VERSION=latest
 
-# Download Hugo
+# 下载 Hugo
 RUN apt-get update && apt-get install -y ca-certificates openssl git curl && \
     rm -rf /var/lib/apt/lists/* && \
     case ${VERSION} in \
@@ -26,13 +26,13 @@ RUN apt-get update && apt-get install -y ca-certificates openssl git curl && \
     tar xf ${VERSION}.tar.gz && \
     mv hugo /usr/bin/hugo
 
-# Hugo dev server port
+# Hugo 开发服务器端口
 EXPOSE 1313
 
-# [Optional] Uncomment this section to install additional OS packages you may want.
+# [可选] 取消注释此部分以安装您可能需要的其他操作系统包
 #
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
 
-# [Optional] Uncomment if you want to install more global node packages
+# [可选] 如果要安装更多全局 node 包，请取消注释
 # RUN sudo -u node npm install -g <your-package-list-here>

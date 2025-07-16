@@ -1,6 +1,6 @@
-# Rename this file to languages.toml to enable multilingual support
-[en]
-languageName = "English"
+# 将此文件重命名为 languages.toml 以启用多语言支持
+[zh-cn]
+languageName = "简体中文"
 languagedirection = "ltr"
-title = "Example Site"
+title = "示例网站"
 weight = 1

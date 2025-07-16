@@ -3,29 +3,29 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			// Update VARIANT to pick hugo variant.
-			// Example variants: hugo, hugo_extended
-			// Rebuild the container if it already exists to update.
+			// 更新 VARIANT 以选择 hugo 版本
+// 例如: hugo, hugo_extended
+// 如果容器已存在，重建容器以更新
 			"VARIANT": "hugo_extended",
-			// Update VERSION to pick a specific hugo version.
-			// Example versions: latest, 0.73.0, 0,71.1
-			// Rebuild the container if it already exists to update.
+			// 更新 VERSION 以选择特定的 hugo 版本
+// 例如: latest, 0.73.0, 0,71.1
+// 如果容器已存在，重建容器以更新
 			"VERSION": "latest",
-			// Update NODE_VERSION to pick the Node.js version: 12, 14
+			// 更新 NODE_VERSION 以选择 Node.js 版本: 12, 14
 			"NODE_VERSION": "14"
 		}
 	},
 
-	// Configure tool-specific properties.
+	// 配置工具特定属性
 	"customizations": {
-		// Configure properties specific to VS Code.
+		// 配置 VS Code 特定属性
 		"vscode": {
-			// Set *default* container specific settings.json values on container create.
+			// 在容器创建时设置默认的容器特定 settings.json 值
 			"settings": { 
 				"html.format.templating": true
 			},
 			
-			// Add the IDs of extensions you want installed when the container is created.
+			// 添加容器创建时要安装的扩展 ID
 			"extensions": [
 				"tamasfe.even-better-toml",
 				"davidanson.vscode-markdownlint"
@@ -33,15 +33,15 @@
 		}
 	},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// 使用 'forwardPorts' 使容器内的端口列表在本地可用
 	"forwardPorts": [
 		1313
 	],
 
-	// Use 'postCreateCommand' to run commands after the container is created.
+	// 使用 'postCreateCommand' 在容器创建后运行命令
 	// "postCreateCommand": "uname -a",
 
-	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	// 将 `remoteUser` 设置为 `root` 以 root 身份连接。更多信息: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "node",
 	"features": {
 		"ghcr.io/devcontainers/features/go:1": {

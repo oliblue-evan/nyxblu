@@ -11,8 +11,8 @@ jobs:
         runs-on: ubuntu-latest
 
         permissions:
-            # Give the default GITHUB_TOKEN write permission to commit and push the
-            # added or changed files to the repository.
+            # 给予默认 GITHUB_TOKEN 写入权限，以提交和推送添加或更改的文件到仓库
+# 添加或更改的文件到仓库。
             contents: write
 
         steps:
